@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--  뒤에 없어도 실행, 자동으로 templates의 view로 인식 But thymeleaf 코드에서 넘어오는 msg 받으려면 추가-->
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+    <h1>View 호출 - Hello World!!</h1>
+    <h1 th:text="${msg}"></h1>
+</body>
+</html>

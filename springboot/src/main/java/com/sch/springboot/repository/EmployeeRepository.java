@@ -12,9 +12,18 @@ public class EmployeeRepository {
     //사원객체를 저장하는 List<Employee>
     private List<Employee> list = new ArrayList<Employee>();
 
+    public List<Employee> selectAll() {
+        return list;
+    }
+
     public String insert(Employee employee) {
         // 원래 DB 연동
-        list.add(employee);
-        return "success";
+        String result = "";
+        if (list.add(employee)) {
+            result = "success";
+        } else {
+            result = "fail";
+        }
+        return result;
     }
 }

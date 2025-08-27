@@ -4,9 +4,14 @@ import com.sch.springboot.dto.Employee;
 import com.sch.springboot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000") // React 개발 서버 주소
 public class RestEmployeeController {
 
     EmployeeService employeeService;
@@ -17,8 +22,29 @@ public class RestEmployeeController {
         this.employeeService = employeeService;
     }
 
-    @PostMapping("/register")
-    public String register(Employee employee) {
+    // React --> 사원등록
+    @PostMapping("/employees/register")
+    public String employeeRegister(@RequestBody Employee employee) { // React 넘어오는 데이터를 받기위함
         return employeeService.register(employee);
     }
+
+    //React --> 사원리스트
+    @GetMapping("/employees")
+    public List<Employee> employees() {
+        return employeeService.findAll();
+    }
+
+
+    @PostMapping("/register")
+    public String register(Employee employee) {
+        return employeeService.register(employee); // success or fail
+    }
+
+    @GetMapping("/list")
+    public String list(Model model) {
+        List<Employee> list =  employeeService.findAll();
+        model.addAttribute("list", list);
+        return "employeeList";
+    }
+
 }

@@ -1,11 +1,20 @@
 package com.sch.springboot.dto;
 
 public class Employee {
-    private String sno;
+    private Long sno;
     private String name;
     private String department;
+    private String address;
 
-    public void setSno(String sno) {
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setSno(Long sno) {
         this.sno = sno;
     }
 
@@ -25,7 +34,7 @@ public class Employee {
         return name;
     }
 
-    public String getSno() {
+    public Long getSno() {
         return sno;
     }
 }

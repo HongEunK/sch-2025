@@ -32,10 +32,10 @@ public class Employee {
 //    public void setEdate(String edate) {
 //        this.edate = edate;
 //    }
-//
-//    public String getEdate() {
-//        return edate;
-//    }
+
+    public LocalDateTime getEdate() {
+        return edate;
+    }
 
     public String getAddress() {
         return address;

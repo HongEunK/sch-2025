@@ -5,6 +5,15 @@ public class Employee {
     private String name;
     private String department;
     private String address;
+    private String edate;
+
+    public void setEdate(String edate) {
+        this.edate = edate;
+    }
+
+    public String getEdate() {
+        return edate;
+    }
 
     public String getAddress() {
         return address;

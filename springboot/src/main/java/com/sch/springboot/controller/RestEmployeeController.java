@@ -24,7 +24,7 @@ public class RestEmployeeController {
 
     // React --> 사원등록
     @PostMapping("/employees/register")
-    public String employeeRegister(@RequestBody Employee employee) { // React 넘어오는 데이터를 받기위함
+    public int employeeRegister(@RequestBody Employee employee) { // React 넘어오는 데이터를 받기위함
         return employeeService.register(employee);
     }
 
@@ -36,8 +36,8 @@ public class RestEmployeeController {
 
 
     @PostMapping("/register")
-    public String register(Employee employee) {
-        return employeeService.register(employee); // success or fail
+    public int register(Employee employee) {
+        return employeeService.register(employee);
     }
 
     @GetMapping("/list")

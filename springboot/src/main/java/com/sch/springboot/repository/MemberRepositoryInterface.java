@@ -7,4 +7,5 @@ import java.util.List;
 public interface MemberRepositoryInterface {
     String insert(Member member);
     List<Member> findALL();
+    String delete(Long sno);
 }

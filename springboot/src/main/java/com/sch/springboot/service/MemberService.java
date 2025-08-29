@@ -20,6 +20,10 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
+    public String delete(Long sno) {
+        return memberRepository.delete(sno);
+    }
+
     public String save(Member member) {
         // repository 호출
         return memberRepository.insert(member);
